@@ -33,6 +33,12 @@ export function reducer(state: any, action: any) {
       let mouseLayerX = layerX;
       let mouseLayerY = layerY;
 
+      if (deltaY > 0) {
+        newZoomLevel = oldZoomLevel - 1;
+      } else {
+        newZoomLevel = oldZoomLevel + 1;
+      }
+
       const a = oldZoomLevel;
       const b = newZoomLevel;
 
@@ -46,12 +52,6 @@ export function reducer(state: any, action: any) {
       let newLeft = oldL - (b / a - 1) * x;
       const oldT = parseFloat(oldTop);
       let newTop = oldT - (b / a - 1) * y;
-
-      if (deltaY > 0) {
-        newZoomLevel = oldZoomLevel - 1;
-      } else {
-        newZoomLevel = oldZoomLevel + 1;
-      }
 
       if (newZoomLevel <= 1) {
         // 缩放系数小于1时复位
