@@ -1,11 +1,7 @@
-"use client";
 import React, { useRef, useState, useEffect, useReducer } from "react";
 import ReactDOM from "react-dom";
-import { initialState, reducer } from "../../../../utils/PixelGrid/store";
-import {
-  createImageFromArrayBuffer,
-  getMousePos,
-} from "../../../../utils/PixelGrid/utils";
+import { initialState, reducer } from "./store";
+import { createImageFromArrayBuffer, getMousePos } from "./utils";
 import {
   Offset,
   PickColor,
@@ -13,7 +9,7 @@ import {
   WrapperMouseMove,
   WrapperMouseUp,
   Zoom,
-} from "../../../../utils/PixelGrid/const";
+} from "./const";
 
 const canvasStyle = {
   display: "block",
@@ -197,7 +193,7 @@ function PixelGrid({ onPickColor, currentColor, onPixelClick, socket }: Props) {
   };
 
   // const renderPickColorBtn = () => {
-  //   let el = document && document.getElementById("color-pick-placeholder");
+  //   let el = document.getElementById("color-pick-placeholder");
   //   if (el) {
   //     return ReactDOM.createPortal(
   //       <button style={{ marginLeft: "20px" }} onClick={setPickColor}>
@@ -247,6 +243,7 @@ function PixelGrid({ onPickColor, currentColor, onPixelClick, socket }: Props) {
         position: "relative",
       }}
     >
+      {/* {renderPickColorBtn()} */}
       <div
         ref={canvasWrapper}
         className="canvas-wrapper"

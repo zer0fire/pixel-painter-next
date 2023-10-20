@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import io from "socket.io-client";
-import "./App.css";
-import PixelGrid from "./component/PixelGrid";
+// import "./App.css";
+import PixelGrid from "../../utils";
 import ColorSelect from "./component/ColorSelect";
 import OnlineCount from "./component/OnlineCount";
 // import { produce } from "immer";
@@ -24,11 +24,15 @@ function App() {
   const [pixelData, setPixelData] = useState([]);
   const [currentColor, setColor] = useState("#ff0000");
 
-  const handlePixelClick = (row, col) => {};
+  const handlePixelClick = () =>
+    // row, col
+    {};
 
-  const changeCurrentColor = (color) => {
-    setColor(color);
-  };
+  const changeCurrentColor = () =>
+    // color
+    {
+      // setColor(color);
+    };
 
   return (
     <React.StrictMode>

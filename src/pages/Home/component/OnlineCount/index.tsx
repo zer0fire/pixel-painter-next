@@ -1,9 +1,10 @@
+"use client";
 import React, { useState } from "react";
 // import { useState } from "react";
 
 function useOnlineCount(socket: any) {
   var [count, setCount] = useState(0);
-  socket.on("online-count", setCount);
+  socket && socket.on("online-count", setCount);
   return count;
 }
 
