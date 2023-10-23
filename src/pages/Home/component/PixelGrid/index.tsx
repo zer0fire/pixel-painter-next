@@ -14,6 +14,8 @@ import {
   WrapperMouseUp,
   Zoom,
 } from "../../../../utils/PixelGrid/const";
+import { Button } from 'antd'
+
 
 const canvasStyle = {
   display: "block",
@@ -213,7 +215,7 @@ function PixelGrid({ onPickColor, currentColor, onPixelClick, socket }: Props) {
     let el = document && document.getElementById("color-pick-placeholder");
     if (el) {
       ReactDOM.createPortal(
-        <button style={{ marginLeft: "20px" }} onClick={setPickColor}>
+        <button className="btn btn-primary" style={{ marginLeft: "20px" }} onClick={setPickColor}>
           {state.isPickingColor ? "正在取色" : "取色"}
         </button>,
         el
@@ -282,6 +284,7 @@ function PixelGrid({ onPickColor, currentColor, onPixelClick, socket }: Props) {
           ref={canvas}
           onMouseMove={handleCanvasMouseMove}
         ></canvas>
+        <Button>Antd</Button>
       </div>
     </div>
   );
